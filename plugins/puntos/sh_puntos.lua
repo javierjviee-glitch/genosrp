@@ -38,27 +38,19 @@ if SERVER then
         net.Send(ply)
     end)
 
-    concommand.Add("abrir_puntos", function(ply)
-        if not IsValid(ply) then return end
-
-        net.Start("AbrirMenuPuntos")
-        net.WriteTable(PLUGIN.puntos)
-        net.Send(ply)
-    end)
+    ix.command.Add("puntos", {
+        description = "Abre el marcador de puntos de las casas.",
+        OnRun = function(_, client)
+            net.Start("AbrirMenuPuntos")
+            net.WriteTable(PLUGIN.puntos)
+            net.Send(client)
+        end
+    })
 end
 
 
 
 if CLIENT then
-
-
-    hook.Add("OnPlayerChat", "AbrirMenuPuntosChat", function(ply, text)
-        if ply == LocalPlayer() and string.lower(text) == "!puntos" then
-            RunConsoleCommand("abrir_puntos")
-            return true
-        end
-    end)
-
     net.Receive("AbrirMenuPuntos", function()
         local puntos = net.ReadTable()
 
