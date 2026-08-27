@@ -1,7 +1,0 @@
-"desarrolador-g"
-{
-	"base" 			"helix"
-	"title" 		"desarrolador-g"
-	"author" 		"TuNombre"
-	"menusystem"	"1"
-}

@@ -2,9 +2,15 @@
 -- Here is where all of your clientside hooks should go.
 
 local f6WasDown = false
+local gWasDown = false
 
 hook.Add("Think", "SchemaThirdPersonToggle", function()
 	local f6IsDown = input.IsKeyDown(KEY_F6)
+	local gIsDown = input.IsKeyDown(KEY_G)
+
+	if (gIsDown and !gWasDown and !IsValid(vgui.GetKeyboardFocus())) then
+		RunConsoleCommand("impulse", "100")
+	end
 
 	if (f6IsDown and !f6WasDown and !IsValid(vgui.GetKeyboardFocus())) then
 		local client = LocalPlayer()
@@ -35,6 +41,7 @@ hook.Add("Think", "SchemaThirdPersonToggle", function()
 	end
 
 	f6WasDown = f6IsDown
+gWasDown = gIsDown
 end)
 
 -- Disables the crosshair permanently.
