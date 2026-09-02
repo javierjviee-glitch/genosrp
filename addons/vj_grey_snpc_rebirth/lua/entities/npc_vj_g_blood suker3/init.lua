@@ -1,0 +1,312 @@
+AddCSLuaFile("shared.lua")
+include('shared.lua')
+--[[
+	*** Copyright (c) 2012-2017 by DrVrej, All rights reserved. ***
+	No parts of this code or any of its contents may be reproduced, copied, modified or adapted,
+	without the prior written consent of the author, unless otherwise indicated for stand-alone materials.
+--]]
+ENT.Model = {"models/gibs/hgibs.mdl"} -- The game will pick a random model from the table when the SNPC is spawned | Add as many as you want
+ENT.StartHealth = 110
+ENT.MovementType = VJ_MOVETYPE_STATIONARY -- How does the SNPC move?
+ENT.HullType = HULL_TINY
+ENT.SightDistance = 99999999999
+ENT.FindEnemy_UseSphere = true
+ENT.CanTurnWhileStationary = false -- If set to true, the SNPC will be able to turn while it's a stationary SNPC
+---------------------------------------------------------------------------------------------------------------------------------------------
+ENT.VJ_NPC_Class = {"CLASS_GREY"} -- NPCs with the same class will be friendly to each other | Combine: CLASS_COMBINE, Zombie: CLASS_ZOMBIE, Antlions = CLASS_ANTLION
+ENT.BloodColor = "Red" -- The blood type, this will determine what it should use (decal, particle, etc.)
+ENT.HasMeleeAttack = false -- Should the SNPC have a melee attack?
+ENT.HasLeapAttack = false -- Should the SNPC have a leap attack?
+ENT.HasBloodPool = false -- Does it have a blood pool?
+ENT.Immune_Blast = true 
+ENT.GodMode = true
+ENT.SoundTbl_Death = {"doll/idle1.wav","doll/idle3.wav"}
+ENT.DeathSoundLevel = 110
+
+-------------------------------------------------------------------------------------
+function ENT:CustomOnInitialize()
+self:SetNoDraw(true)
+ParticleEffectAttach("gem rollblood", PATTACH_POINT_FOLLOW, self, 0)
+self:SetCollisionGroup(COLLISION_GROUP_IN_VEHICLE)
+timer.Simple(math.random(2,3.2),function() if IsValid(self) then self:Remove() end end)
+timer.Simple(math.random(0.5,1),function() if IsValid(self) then self.CanTurnWhileStationary = true end end)
+self.VJ_NoTarget = true
+						
+			
+
+
+timer.Simple(0.1,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*100 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*100,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(0.2,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*150 + self:GetUp()*20)
+	
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*150,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(0.3,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*200 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*200,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(0.4,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*250 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*250,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(0.5,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*300 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*300,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(0.6,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*350 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*350,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(0.7,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*400 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*400,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(0.8,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*450 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*450,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(0.9,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*500 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*500,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(1,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*550 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*550,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(1.1,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*600 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*600,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(1.2,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*650 + self:GetUp()*20)
+	
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*650,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(1.3,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*700 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*700,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(1.4,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*750 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*750,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(1.5,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*800 + self:GetUp()*20)
+	
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*800,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		
+		timer.Simple(1.6,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*850 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*850,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(1.7,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*900 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*900,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		
+		timer.Simple(1.8,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*950 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*950,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(1.9,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1000 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1000,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1050 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1050,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.1,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1100 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1100,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.2,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1150 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1150,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.3,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1200 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1200,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.4,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1250 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1250,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.5,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1300 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1300,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.6,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1350 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1350,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.7,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1400 + self:GetUp()*20)
+	
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1400,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.8,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1450 + self:GetUp()*20)
+
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1450,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		timer.Simple(2.9,function() if IsValid(self) then local effect1 = ents.Create("info_particle_system")
+		effect1:SetKeyValue("effect_name","blood_door")
+		effect1:SetPos(self:GetPos() + self:GetForward()*1500 + self:GetUp()*20)
+	
+		effect1:Spawn()
+		effect1:Activate()
+		effect1:Fire("Start","",0.1)
+		effect1:Fire("Kill","",0.7)
+		util.VJ_SphereDamage(self,self,self:GetPos() + self:GetForward()*1500,80,math.random(3,8),DMG_SLASH,true,true) end end)
+		end
+---------------------------------
+function ENT:CustomOnThink()
+util.VJ_SphereDamage(self,self,self:GetPos(),160,math.random(5,12),DMG_BLAST,true,true)
+end
+--[[
+	*** Copyright (c) 2012-2017 by DrVrej, All rights reserved. ***
+	No parts of this code or any of its contents may be reproduced, copied, modified or adapted,
+	without the prior written consent of the author, unless otherwise indicated for stand-alone materials.
+--]]
+
+

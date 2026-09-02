@@ -1,0 +1,25 @@
+game.AddParticles("particles/gurspack.pcf")
+game.AddParticles("particles/vomit.pcf")
+
+VJ.AddPlugin("Grey", "NPC")
+
+local vCat = "Grey"
+VJ.AddNPC("Babu","npc_vj_g_Babu",vCat)
+VJ.AddNPC("Papezombie","npc_vj_g_Papezombie",vCat)
+VJ.AddNPC("Baby","npc_vj_g_Baby",vCat)
+VJ.AddNPC("Hatred","npc_vj_g_Hatred",vCat)
+VJ.AddNPC("Creepy","npc_vj_g_Creepy",vCat)
+VJ.AddNPC("Gurulo","npc_vj_g_Gurulo",vCat)
+VJ.AddNPC("Steve(boss)","npc_vj_g_Steve(boss)",vCat)
+VJ.AddNPC("Gemini(boss)","npc_vj_g_Gemini(boss)",vCat)
+VJ.AddNPC("Vomit","npc_vj_g_Vomit",vCat)
+VJ.AddNPC("Dog","npc_vj_g_Dog",vCat)
+VJ.AddNPC("Doll","npc_vj_g_doll",vCat)
+VJ.AddNPC("Floaters","npc_vj_g_Floaters",vCat)
+VJ.AddNPC("Floaters2","npc_vj_g_Floaters2",vCat)
+VJ.AddNPC("Floaters3","npc_vj_g_Floaters3",vCat)
+VJ.AddNPC("Head Monster","npc_vj_g_headmonster",vCat)
+VJ.AddNPC("Anita(boss)","npc_vj_g_anita(boss)",vCat)
+VJ.AddNPC("Random Evil","sent_vj_g_randevil",vCat)
+VJ.AddNPC("Random Evil Spawner","sent_vj_g_randevilspawner",vCat)
+

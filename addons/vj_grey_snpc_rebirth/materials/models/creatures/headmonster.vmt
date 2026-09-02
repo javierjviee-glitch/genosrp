@@ -1,0 +1,9 @@
+VertexLitGeneric
+{
+$baseTexture "models\creatures\headmonster"
+$surfaceprop "flesh"
+$nocull 1
+"$alphatest" 1
+"$model" "1"
+"$halflambert" "1"
+}

@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+	$basetexture "models/in_sound_mind/watcher/mask"
+	$bumpmap "models/in_sound_mind/watcher/mask_n"
+	$selfillum "1"
+	$selfillummask "models/in_sound_mind/watcher/mask_glow"
+	$selfillumtint	"[5 5 5]"
+	$surfaceprop plastic
+	$nodecal 1
+}

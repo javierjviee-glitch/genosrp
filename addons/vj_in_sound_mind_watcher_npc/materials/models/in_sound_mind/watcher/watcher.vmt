@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/in_sound_mind/watcher/watcher"
+	$bumpmap "models/in_sound_mind/watcher/watcher_n"
+	$nodecal 1
+}

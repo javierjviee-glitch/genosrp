@@ -1,0 +1,13 @@
+{
+  "title": "[VJ Base] The Masked One",
+  "type": "npc",
+  "tags": [
+    "scenic",
+    "movie",
+    "realism"
+  ],
+  "ignore": [
+    "README",
+    "README.*"
+  ]
+}

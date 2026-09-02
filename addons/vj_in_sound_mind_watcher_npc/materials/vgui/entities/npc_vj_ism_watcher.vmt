@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/npc_vj_ism_watcher"
+	"$translucent" 1
+}

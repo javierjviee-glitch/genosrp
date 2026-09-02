@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/in_sound_mind/shade/dripping"
+	$bumpmap "models/in_sound_mind/shade/dripping_n"
+	$nodecal 1
+	$translucent 1
+}

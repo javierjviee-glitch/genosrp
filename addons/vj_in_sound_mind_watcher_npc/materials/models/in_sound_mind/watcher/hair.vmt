@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	$basetexture "models/in_sound_mind/watcher/hair"
+	$alphatest 1
+	$nodecal 1
+}

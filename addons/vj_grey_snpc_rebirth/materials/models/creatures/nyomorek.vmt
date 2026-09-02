@@ -1,0 +1,17 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/creatures/nyomorek"
+//	"$bumpmap" "models/creatures/nyomorek_normal"
+	"$surfaceprop" "flesh"
+	
+	"$phong" "1"
+	"$phongexponent" "25"
+	"$phongexponenttexture" 	"models/creatures/kiddo_phong"
+
+	"$phongboost"	"0.1"
+	"$phongfresnelranges" 	"[0.5 1 10]"
+
+	"$rimlight" "1"												
+	"$rimlightexponent" "40"										
+	"$rimlightboost" "1"	
+}

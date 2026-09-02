@@ -1,0 +1,20 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/creatures/gurulo"
+	"$bumpmap" "models/creatures/gurulo_normal"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ .1 .1 .1 ]"
+	"$normalmapalphaenvmapmask" 1
+
+	"$phong" "1"
+	"$phongexponent" "100"
+	"$phongexponenttexture" 	"models\creatures/kiddo_phong"
+
+	"$phongboost"	"1"
+	"$phongfresnelranges" 	"[0 0 1]"
+
+	"$rimlight" "1"												
+	"$rimlightexponent" "3"										
+	"$rimlightboost" "1"	
+
+}

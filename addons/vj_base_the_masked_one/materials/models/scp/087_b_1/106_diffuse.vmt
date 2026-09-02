@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/scp/087_b_1/087b_diffuse"
+	"$bumpmap" "models/scp/087_b_1/087b_normal"
+	"$surfaceprop" "Flesh"
+}

@@ -1,0 +1,23 @@
+VertexLitGeneric
+{
+$baseTexture "models\custom models\baba"
+$surfaceprop "wood"
+
+	"$alphatest" 1
+	"$bumpmap" "models\custom models\baba_normal"
+
+	"$model" "1"
+	"$halflambert" "1"
+
+	"$phong" "1"
+	"$phongexponent" "100"
+	"$phongexponenttexture" 	"models\custom models\baba_exponent"
+
+	"$phongboost"	"70"
+	"$phongfresnelranges" 	"[0 0 1]"
+
+	"$rimlight" "1"												
+	"$rimlightexponent" "3"										
+	"$rimlightboost" "5"	
+
+}

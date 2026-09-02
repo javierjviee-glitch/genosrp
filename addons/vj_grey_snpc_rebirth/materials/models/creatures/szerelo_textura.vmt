@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/creatures/szerelo_textura"
+	"$bumpmap" "models/creatures/szerelo_textura_normal"
+
+	"$phong" "1"
+	"$phongexponent" "100"
+	"$phongexponenttexture" 	"models/creatures/kiddo_phong"
+
+	"$phongboost"	"20"
+	"$phongfresnelranges" 	"[0 0 1]"
+
+	"$rimlight" "1"												
+	"$rimlightexponent" "3"										
+	"$rimlightboost" "6"	
+}

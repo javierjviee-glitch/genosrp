@@ -1,0 +1,58 @@
+{
+  "runtime": {
+    "version": "Lua 5.1",
+    "framestack": 16,
+    "pathStrict": true,
+    "unicodeName": false,
+    "nonstandardSymbol": [
+      "//",
+      "/**/"
+    ],
+    "special": {
+      "CLIENT": "constant",
+      "SERVER": "constant",
+      "SHARED": "constant",
+      "FILL": "constant",
+      "ENT": "type",
+      "SWEP": "type",
+      "VJ": "type"
+    }
+  },
+  "diagnostics": {
+    "disable": [
+      "lowercase-global"
+    ],
+    "globals": [
+      "include",
+      "AddCSLuaFile",
+      "VJ",
+      "CLIENT",
+      "SERVER",
+      "SHARED",
+      "ENT",
+      "SWEP",
+      "file",
+      "chat",
+      "timer",
+      "vgui",
+      "draw",
+      "math",
+      "Color",
+      "ScrW",
+      "ScrH",
+      "IsValid",
+      "FILL",
+      "ACT_IDLE",
+      "ACT_WALK",
+      "ACT_RUN",
+      "ACT_HL2MP_IDLE_CROUCH_KNIFE",
+      "ACT_HL2MP_WALK_CROUCH_KNIFE",
+      "ACT_HL2MP_RUN_KNIFE",
+      "ACT_GMOD_GESTURE_RANGE_ZOMBIE",
+      "kRenderFxDistort",
+      "VJ_EmitSound",
+      "language",
+      "killicon"
+    ]
+  }
+}

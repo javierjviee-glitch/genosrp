@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/creatures/paperzombie"
+	"$surfaceprop" "flesh"
+	$nocull 1
+}

@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/creatures/zombi4"
+	"$bumpmap" "models/creatures/zombi2_normal"
+
+	"$phong" "0"
+	"$phongexponent" "1"
+	"$phongexponenttexture" 	"models/creatures/kiddo_phong"
+
+	"$phongboost"	"0"
+	"$phongfresnelranges" 	"[0 0 1]"
+
+	"$rimlight" "0"												
+	"$rimlightexponent" "1"										
+	"$rimlightboost" "1"	
+}

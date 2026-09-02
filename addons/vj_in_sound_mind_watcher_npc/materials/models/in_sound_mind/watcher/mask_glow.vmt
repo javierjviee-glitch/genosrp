@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/in_sound_mind/watcher/mask_glow"
+	$selfillum "1"
+	$selfillummask "models/in_sound_mind/watcher/mask_glow"
+	$selfillumtint	"[5 5 5]"
+	$surfaceprop flesh
+	$nodecal 1
+}

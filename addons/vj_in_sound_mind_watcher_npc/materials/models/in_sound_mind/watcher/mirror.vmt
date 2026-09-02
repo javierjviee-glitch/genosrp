@@ -1,0 +1,15 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/in_sound_mind/watcher/mirror"
+	$bumpmap "models/in_sound_mind/watcher/phong"
+	$phong                      1
+	$phongboost                 10
+	$phongexponenttexture "models/in_sound_mind/watcher/exp"
+	$phongfresnelranges         "[1 3 8]"
+	"$phongalbedotint"		"1"
+	"$phongalbedoboost" 	"10"
+	$normalmapalphaphongmask    1
+	$surfaceprop glass
+	$nodecal 1
+	$nocull 		"1"
+}

@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/creatures/baba2"
+	"$bumpmap" "models/creatures/baba2_normal"
+	"$surfaceprop" "flesh"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+}
